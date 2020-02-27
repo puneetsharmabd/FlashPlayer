@@ -12,12 +12,10 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-
 const val SEND_SMS_ALARM_CODE = 0
 const val REQUEST_PERMISSION_CODE = 30
 
 class Main2Activity : AppCompatActivity() {
-
     private lateinit var manager: AlarmManager
     private lateinit var pendingIntent: PendingIntent
 
